@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شركة الاهرام الحديثة</title>
+
+  <!-- Arabic Fonts from Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+       Shows on every page. Back button appears on sub-pages.
+       ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <!-- Back button (hidden on homepage, shown via JS) -->
+      <button class="btn-back" id="backBtn" onclick="goBack()" style="display:none">
+        <span>&#8592;</span> رجوع
+      </button>
+
+      <!-- Brand name -->
+      <a class="brand" onclick="showPage('home')">الاهرام الحديثة</a>
+
+      <!-- Current page title -->
+      <span class="nav-title" id="navTitle"></span>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       PAGE: HOME
+       Shows logo, company name, and 3 main category cards
+       ============================================================ -->
+  <div class="page active" id="page-home">
+
+    <!-- Hero section with logo + title -->
+    <section class="hero">
+      <!-- Animated background particles -->
+      <div class="particles" id="particles"></div>
+
+      <!-- Logo -->
+      <div class="logo-wrap">
+        <!-- Replace logo.png with your actual logo file -->
+        <img src="logo.png" alt="شعار شركة الاهرام الحديثة" class="logo" id="siteLogo"
+          onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex'" />
+        <!-- Fallback if logo not found -->
+        <div class="logo-fallback" id="logoFallback" style="display:none">
+          <span>&#9651;</span>
+        </div>
+      </div>
+
+      <!-- Company name -->
+      <h1 class="company-name">شركة الاهرام الحديثة</h1>
+
+      <!-- Gold divider -->
+      <div class="divider"></div>
+
+      <!-- Tagline -->
+      <p class="tagline">لتصدير الادوات الصحية و الكهربائية و ادوات المعمار</p>
+
+      <!-- Decorative dots -->
+      <div class="dots">
+        <span></span><span class="active"></span><span></span>
+      </div>
+    </section>
+
+    <!-- 3 Main Category Cards -->
+    <section class="categories">
+      <p class="section-label">اختر القسم</p>
+
+      <div class="cards-grid">
+
+        <!-- Card 1: Plumbing -->
+        <div class="cat-card" onclick="showPage('plumbing')">
+          <div class="card-icon">&#128295;</div>
+          <h3 class="card-title">ادوات سباكة</h3>
+          <p class="card-sub">صرف · تغذية · اكسسوارات</p>
+          <div class="card-arrow">اضغط للدخول &#8592;</div>
+        </div>
+
+        <!-- Card 2: Electrical -->
+        <div class="cat-card" onclick="showPage('electrical')">
+          <div class="card-icon">&#9889;</div>
+          <h3 class="card-title">ادوات كهرباء</h3>
+          <p class="card-sub">تأسيس · تشطيب</p>
+          <div class="card-arrow">اضغط للدخول &#8592;</div>
+        </div>
+
+        <!-- Card 3: Construction -->
+        <div class="cat-card" onclick="showPage('construction')">
+          <div class="card-icon">&#127959;&#65039;</div>
+          <h3 class="card-title">ادوات معمار</h3>
+          <p class="card-sub">٢٠٠ منتج متنوع</p>
+          <div class="card-arrow">اضغط للدخول &#8592;</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&#169; 2024 شركة الاهرام الحديثة &middot; جميع الحقوق محفوظة</p>
+    </footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: PLUMBING (ادوات سباكة)
+       Shows 3 sub-category cards
+       ============================================================ -->
+  <div class="page" id="page-plumbing">
+    <section class="page-hero" style="--hero-color: rgba(0,100,60,0.15)">
+      <div class="page-icon">&#128295;</div>
+      <h1 class="page-heading shimmer-text">ادوات سباكة</h1>
+      <div class="divider"></div>
+      <p class="page-sub">اختر الفئة المطلوبة</p>
+    </section>
+
+    <section class="categories">
+      <div class="cards-grid">
+
+        <!-- Drainage -->
+        <div class="cat-card" onclick="showPage('drainage')">
+          <div class="card-icon">&#129695;</div>
+          <h3 class="card-title">صرف</h3>
+          <p class="card-sub">قائمة بـ ٢٠٠ اسم</p>
+          <div class="card-arrow">اضغط للدخول &#8592;</div>
+        </div>
+
+        <!-- Feeding -->
+        <div class="cat-card" onclick="showPage('feeding')">
+          <div class="card-icon">&#128167;</div>
+          <h3 class="card-title">تغذية</h3>
+          <p class="card-sub">٢٠٠ منتج</p>
+          <div class="card-arrow">اضغط للدخول &#8592;</div>
+        </div>
+
+        <!-- Accessories -->
+        <div class="cat-card" onclick="showPage('accessories')">
+          <div class="card-icon">&#128297;</div>
+          <h3 class="card-title">اكسسوارات</h3>
+          <p class="card-sub">٢٠٠ منتج</p>
+          <div class="card-arrow">اضغط للدخول &#8592;</div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       PAGE: DRAINAGE (صرف)
+       Shows 200 clickable names
+       ============================================================ -->
+  <div class="page" id="page-drainage">
+    <section class="page-hero" style="--hero-color: rgba(0,60,120,0.15)">
+      <div class="page-icon">&#129695;</div>
+      <h1 class="page-heading shimmer-text">صرف</h1>
+      <div class="divider"></div>
+      <p class="page-sub">اختر اسماً لعرض المنتجات</p>
+    </section>
+
+    <!-- Search bar -->
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="drainageSearch"
+        placeholder="&#128269; ابحث في القائمة..."
+        oninput="filterList('drainage-list', this.value)" />
+    </div>
+
+    <!-- 200 clickable names -->
+    <div class="names-grid" id="drainage-list">
+      <!-- Generated by JS in script.js -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE: DRAINAGE PRODUCTS
+       Shows 200 products for a selected drainage name
+       ============================================================ -->
+  <div class="page" id="page-drainage-products">
+    <section class="page-hero blurred-bg" id="drainageProductsBg">
+      <div class="bg-overlay"></div>
+      <div class="hero-content">
+        <div class="page-icon">&#128230;</div>
+        <h1 class="page-heading shimmer-text" id="drainageProductTitle">المنتجات</h1>
+        <div class="divider"></div>
+        <p class="page-sub">٢٠٠ منتج متاح</p>
+      </div>
+    </section>
+
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="drainageProductSearch"
+        placeholder="&#128269; ابحث في المنتجات..."
+        oninput="filterList('drainage-products-list', this.value)" />
+    </div>
+
+    <div class="products-grid" id="drainage-products-list">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE: FEEDING (تغذية)
+       Shows 200 products
+       ============================================================ -->
+  <div class="page" id="page-feeding">
+    <section class="page-hero blurred-bg">
+      <div class="bg-overlay"></div>
+      <div class="hero-content">
+        <div class="page-icon">&#128167;</div>
+        <h1 class="page-heading shimmer-text">تغذية</h1>
+        <div class="divider"></div>
+        <p class="page-sub">٢٠٠ منتج متاح</p>
+      </div>
+    </section>
+
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="feedingSearch"
+        placeholder="&#128269; ابحث في المنتجات..."
+        oninput="filterList('feeding-list', this.value)" />
+    </div>
+
+    <div class="products-grid" id="feeding-list">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE: ACCESSORIES (اكسسوارات)
+       Shows 200 products
+       ============================================================ -->
+  <div class="page" id="page-accessories">
+    <section class="page-hero blurred-bg">
+      <div class="bg-overlay"></div>
+      <div class="hero-content">
+        <div class="page-icon">&#128297;</div>
+        <h1 class="page-heading shimmer-text">اكسسوارات</h1>
+        <div class="divider"></div>
+        <p class="page-sub">٢٠٠ منتج متاح</p>
+      </div>
+    </section>
+
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="accessoriesSearch"
+        placeholder="&#128269; ابحث في المنتجات..."
+        oninput="filterList('accessories-list', this.value)" />
+    </div>
+
+    <div class="products-grid" id="accessories-list">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE: ELECTRICAL (ادوات كهرباء)
+       Shows 2 sub-category cards
+       ============================================================ -->
+  <div class="page" id="page-electrical">
+    <section class="page-hero" style="--hero-color: rgba(255,180,0,0.1)">
+      <div class="page-icon">&#9889;</div>
+      <h1 class="page-heading shimmer-text">ادوات كهرباء</h1>
+      <div class="divider"></div>
+      <p class="page-sub">اختر الفئة المطلوبة</p>
+    </section>
+
+    <section class="categories">
+      <div class="cards-grid two-cols">
+
+        <!-- Foundation -->
+        <div class="cat-card" onclick="showPage('el-foundation')">
+          <div class="card-icon">&#127959;&#65039;</div>
+          <h3 class="card-title">تأسيس</h3>
+          <p class="card-sub">٢٠٠ منتج</p>
+          <div class="card-arrow">اضغط للدخول &#8592;</div>
+        </div>
+
+        <!-- Finishing -->
+        <div class="cat-card" onclick="showPage('el-finishing')">
+          <div class="card-icon">&#10024;</div>
+          <h3 class="card-title">تشطيب</h3>
+          <p class="card-sub">٢٠٠ منتج</p>
+          <div class="card-arrow">اضغط للدخول &#8592;</div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       PAGE: ELECTRICAL FOUNDATION (تأسيس)
+       ============================================================ -->
+  <div class="page" id="page-el-foundation">
+    <section class="page-hero blurred-bg">
+      <div class="bg-overlay"></div>
+      <div class="hero-content">
+        <div class="page-icon">&#127959;&#65039;</div>
+        <h1 class="page-heading shimmer-text">تأسيس كهرباء</h1>
+        <div class="divider"></div>
+        <p class="page-sub">٢٠٠ منتج متاح</p>
+      </div>
+    </section>
+
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="elFoundationSearch"
+        placeholder="&#128269; ابحث في المنتجات..."
+        oninput="filterList('el-foundation-list', this.value)" />
+    </div>
+
+    <div class="products-grid" id="el-foundation-list">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE: ELECTRICAL FINISHING (تشطيب)
+       ============================================================ -->
+  <div class="page" id="page-el-finishing">
+    <section class="page-hero blurred-bg">
+      <div class="bg-overlay"></div>
+      <div class="hero-content">
+        <div class="page-icon">&#10024;</div>
+        <h1 class="page-heading shimmer-text">تشطيب كهرباء</h1>
+        <div class="divider"></div>
+        <p class="page-sub">٢٠٠ منتج متاح</p>
+      </div>
+    </section>
+
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="elFinishingSearch"
+        placeholder="&#128269; ابحث في المنتجات..."
+        oninput="filterList('el-finishing-list', this.value)" />
+    </div>
+
+    <div class="products-grid" id="el-finishing-list">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE: CONSTRUCTION (ادوات معمار)
+       Goes directly to 200 products
+       ============================================================ -->
+  <div class="page" id="page-construction">
+    <section class="page-hero blurred-bg">
+      <div class="bg-overlay"></div>
+      <div class="hero-content">
+        <div class="page-icon">&#127959;&#65039;</div>
+        <h1 class="page-heading shimmer-text">ادوات معمار</h1>
+        <div class="divider"></div>
+        <p class="page-sub">٢٠٠ منتج متاح</p>
+      </div>
+    </section>
+
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="constructionSearch"
+        placeholder="&#128269; ابحث في المنتجات..."
+        oninput="filterList('construction-list', this.value)" />
+    </div>
+
+    <div class="products-grid" id="construction-list">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <!-- Our JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
