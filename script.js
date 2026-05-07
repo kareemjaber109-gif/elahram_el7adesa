@@ -47,8 +47,7 @@ function generateItems(prefix, count = 200) {
    DATA: Pre-generate all 200-item lists
    ---------------------------------------------------------------- */
 const DATA = {
-  drainageNames:        generateItems('اسم',    200),
-  drainageProducts:     [
+  drainageNames:        [
     "كوع عادة 1.5 بوصة جانا",
     "كوع عادة 2 بوصة جانا",
     "كوع عادة 3 بوصة جانا",
@@ -94,6 +93,7 @@ const DATA = {
     "مواسير 4 بوصة ( 3 مللي ) جانا",
     "مواسير 6 بوصة ( 3 مللي ) جانا"
   ],
+  drainageProducts:     generateItems('منتج', 20), // Placeholder products inside each drainage name
   feedingProducts:      [
     "كوع لحام 4/3 بوصة اكواستار",
     "كوع لحام 1 بوصة اكواستار",
