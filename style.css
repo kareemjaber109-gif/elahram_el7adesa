@@ -386,6 +386,28 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ----------------------------------------------------------------
+   DEVELOPER CREDIT
+   ---------------------------------------------------------------- */
+.dev-credit {
+  text-align: center;
+  padding: 20px 0 40px;
+  background: var(--bg-card);
+}
+
+.dev-credit a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: var(--transition);
+  opacity: 0.6;
+}
+
+.dev-credit a:hover {
+  color: var(--gold-light);
+  opacity: 1;
+}
 .section-label {
   text-align: center;
   color: var(--text-muted);
