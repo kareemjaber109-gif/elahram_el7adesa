@@ -307,8 +307,91 @@ body {
 }
 
 /* ----------------------------------------------------------------
-   SECTION LABEL (above cards)
+   CONTACT FOOTER (Fixed at bottom)
    ---------------------------------------------------------------- */
+.contact-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--gold-dark);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  gap: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  transition: var(--transition);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.contact-text strong {
+  font-size: 0.85rem;
+  color: var(--gold-light);
+}
+
+.contact-text span {
+  font-size: 0.75rem;
+  color: #bbb;
+}
+
+/* Adjust page content to not be hidden by footer */
+body {
+  padding-bottom: 70px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contact-item {
+    flex: 0 0 45%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-item {
+    flex: 0 0 100%;
+  }
+}
 .section-label {
   text-align: center;
   color: var(--text-muted);
